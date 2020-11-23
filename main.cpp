@@ -19,12 +19,6 @@ int main(int argc, char *argv[])
     std::stringstream text;
     text << file.rdbuf();
     
-   /* 
-    parsedtext = std::regex_replace(text.str(), std::regex("mov"), "\033[1;31m mov\033[0m");
-    parsedtext = std::regex_replace(parsedtext, std::regex("pop"), "\033[1;31m pop\033[0m");
-    parsedtext = std::regex_replace(parsedtext, std::regex("push"), "\033[1;31m push\033[0m");
-    parsedtext = std::regex_replace(parsedtext, std::regex("section"), "\033[1;31m section\033[0m");
-    */
 
     parsedtext = Getformated(text.str(),"mov");
     parsedtext = Getformated(parsedtext,"pop");
@@ -35,5 +29,13 @@ int main(int argc, char *argv[])
     parsedtext = Getformated(parsedtext,"section .text");
     
     std::cout << parsedtext << std::endl;
+    //initscr();
+
+    //printw("%s",parsedtext.c_str());
+
+    //refresh();
+    //getch();
+
+    //endwin();
 
 }
